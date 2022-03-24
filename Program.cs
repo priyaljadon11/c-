@@ -1,0 +1,28 @@
+﻿using System;
+
+namespace MyApplication
+{
+    class Armstrong
+    {
+        static void Main(string[] args)
+        {
+            int total, sum = 0, temp, num = Convert.ToInt16(Console.ReadLine());
+            temp = num;
+
+            while (temp > 0)
+            {
+                total = temp % 10;
+                sum = sum + total * total * total;
+                temp = temp / 10;
+            }
+            if (num == sum)
+            {
+                Console.WriteLine("Number is Armstrong");
+            }
+            else
+            {
+                Console.WriteLine("Number is not Armstrong");
+            }
+        }
+    }
+}
