@@ -1,28 +1,35 @@
 ﻿using System;
-
-namespace MyApplication
+public class MinMax
 {
-    class Armstrong
+    static void min(int[] arr)
     {
-        static void Main(string[] args)
+        int min = arr[0];
+         for(int i = 0; i < arr.Length; i++)
         {
-            int total, sum = 0, temp, num = Convert.ToInt16(Console.ReadLine());
-            temp = num;
-
-            while (temp > 0)
+            if (min > arr[i])
             {
-                total = temp % 10;
-                sum = sum + total * total * total;
-                temp = temp / 10;
-            }
-            if (num == sum)
-            {
-                Console.WriteLine("Number is Armstrong");
-            }
-            else
-            {
-                Console.WriteLine("Number is not Armstrong");
+                min = arr[i];
             }
         }
+        Console.WriteLine("Minimum element is: " + min);
+    }
+     static void max(int[] arr)
+    {
+        int max = arr[0];
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (max < arr[i])
+            {
+                max = arr[i];
+            }
+        }
+        Console.WriteLine("Maximum Element is: " + max);
+    }
+    public static void Main(string[] args)
+    {
+        int[] arr1 = { 101, 20, 40, 50, 6 };
+        int[] arr2 = { 2, 44, 33, 56, 24, 78 };
+        min(arr1);
+        max(arr2);
     }
 }
